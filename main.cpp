@@ -1,6 +1,6 @@
 // main.cpp
 
-#include <iostream>
+import std;
 
 int main(){
 	int x, y, z;
