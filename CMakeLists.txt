@@ -6,7 +6,15 @@ set(CMAKE_CXX_MODULE_STD TRUE)
 
 project(Tutorial LANGUAGES CXX)
 
-add_executable(${PROJECT_NAME} main.cpp)
+add_executable(${PROJECT_NAME})
+
+target_sources(${PROJECT_NAME} PRIVATE
+	main.cpp
+)
+
+target_sources(${PROJECT_NAME} PRIVATE FILE_SET CXX_MODULES FILES
+	employee.cppm
+)
 
 target_compile_features(${PROJECT_NAME}
 	PUBLIC		cxx_std_23

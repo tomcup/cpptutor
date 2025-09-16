@@ -2,6 +2,8 @@
 
 import std;
 
+import employee;
+
 int main(){
 	int uninitializedInt;
 	int initializedInt { 7 };
@@ -18,4 +20,16 @@ int main(){
 	std::cout << std::format("Max double value: {}\n", std::numeric_limits<double>::max());
 	std::cout << std::format("Min double value: {}\n", std::numeric_limits<double>::min());
 	std::cout << std::format("Lowest double value: {}\n", std::numeric_limits<double>::lowest());
+
+	enum class PieceType{ King, Queen, Rook, Pawn };
+
+	Employee anEmployee;
+	anEmployee.firstInitial = 'J';
+	anEmployee.lastInitial = 'D';
+	anEmployee.employeeNumber = 42;
+	anEmployee.salary = 80000;
+
+	std::cout << std::format("Employee: {}{}", anEmployee.firstInitial, anEmployee.lastInitial) << std::endl;
+	std::cout << std::format("Number: {}", anEmployee.employeeNumber) << std::endl;
+	std::cout << std::format("Salary: ${}", anEmployee.salary) << std::endl;
 }
