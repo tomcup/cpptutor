@@ -3,19 +3,19 @@
 import std;
 
 int main(){
-	int x, y, z;
+	int uninitializedInt;
+	int initializedInt { 7 };
 
-	x = 3;
-	y = 5;
+	std::cout << std::format("{} is random value", uninitializedInt) << std::endl;
+	std::cout << std::format("{} was assigned an initial value", initializedInt) << std::endl;
 
-	std::cout << x << " + " << y << " = ";
+	std::cout << "int:\n";
+	std::cout << std::format("Max int value: {}\n", std::numeric_limits<int>::max());
+	std::cout << std::format("Min int value: {}\n", std::numeric_limits<int>::min());
+	std::cout << std::format("Lowest int value: {}\n", std::numeric_limits<int>::lowest());
 
-	std::cin >> z;
-
-	if (x+y == z)
-		std::cout << "right!" << std::endl;
-	else
-		std::cout << "wrong!" << std::endl;
-
-	return 0;
+	std::cout << "\ndouble:\n";
+	std::cout << std::format("Max double value: {}\n", std::numeric_limits<double>::max());
+	std::cout << std::format("Min double value: {}\n", std::numeric_limits<double>::min());
+	std::cout << std::format("Lowest double value: {}\n", std::numeric_limits<double>::lowest());
 }
