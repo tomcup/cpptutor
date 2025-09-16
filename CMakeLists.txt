@@ -14,6 +14,7 @@ target_sources(${PROJECT_NAME} PRIVATE
 
 target_sources(${PROJECT_NAME} PRIVATE FILE_SET CXX_MODULES FILES
 	employee.cppm
+	mode.cppm
 )
 
 target_compile_features(${PROJECT_NAME}

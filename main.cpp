@@ -3,6 +3,7 @@
 import std;
 
 import employee;
+import mode;
 
 int main(){
 	int uninitializedInt;
@@ -21,7 +22,7 @@ int main(){
 	std::cout << std::format("Min double value: {}\n", std::numeric_limits<double>::min());
 	std::cout << std::format("Lowest double value: {}\n", std::numeric_limits<double>::lowest());
 
-	enum class PieceType{ King, Queen, Rook, Pawn };
+	std::cout << std::endl;
 
 	Employee anEmployee;
 	anEmployee.firstInitial = 'J';
@@ -32,4 +33,19 @@ int main(){
 	std::cout << std::format("Employee: {}{}", anEmployee.firstInitial, anEmployee.lastInitial) << std::endl;
 	std::cout << std::format("Number: {}", anEmployee.employeeNumber) << std::endl;
 	std::cout << std::format("Salary: ${}", anEmployee.salary) << std::endl;
+
+	int value { 42 };
+	Mode mode {};
+
+	switch (mode) {
+		using enum Mode;
+		case Custom:
+			value = 84;
+			[[fallthrough]];
+		case Standard:
+		case Default:
+			value = 0;
+	}
+
+	std::cout << std::format("The value is: {}", value) << std::endl;
 }
