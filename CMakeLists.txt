@@ -21,3 +21,11 @@ target_compile_features(${PROJECT_NAME}
 	PUBLIC		cxx_std_23
 	INTERFACE	cxx_std_20
 )
+
+if (MSVC)
+	target_compile_options(${PROJECT_NAME} PRIVATE /W4 /WX)
+else()
+	target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra)
+	message(AUTHOR_WARNING "Using GUNCC, warning level is set to all.")
+endif()
+
